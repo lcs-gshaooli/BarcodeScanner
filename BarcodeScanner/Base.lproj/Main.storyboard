@@ -50,7 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="productImage" destination="fUt-r1-rMO" id="VfY-LC-to3"/>
-                        <outlet property="productName" destination="vG7-6E-1mh" id="7WS-1f-cjR"/>
+                        <outlet property="productName" destination="vG7-6E-1mh" id="cTs-Kh-W4m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
