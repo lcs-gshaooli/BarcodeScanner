@@ -15,6 +15,25 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBOutlet var productName: UILabel!
+    @IBOutlet var productImage: UIImageView!
+    @IBAction func upcField(_ sender: Any) {
+    }
+    
+    @IBAction func productDetailsButton(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
