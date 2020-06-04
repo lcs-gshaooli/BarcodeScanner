@@ -10,20 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var productName: UILabel!
+    @IBOutlet var productImage: UIImageView!
+    @IBOutlet var upcField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-    }
-    
-    @IBOutlet var productName: UILabel!
-    @IBOutlet var productImage: UIImageView!
-    @IBAction func upcField(_ sender: Any) {
+        
+        // Pre-load a UPC number to lookup
+        upcField.text = "055742517859"
+        
     }
     
     @IBAction func productDetailsButton(_ sender: Any) {
         
-        // Disable the button
         
         // Define the completion handler that will be invoked to retrieve image data
         let getProductImage: (Data?, URLResponse?, Error?) -> Void = {
@@ -56,6 +58,94 @@ class ViewController: UIViewController {
                 return
             }
             
+            
+            self.productImage = UIImageView(image: image)
+            // Add the image view to the parent view
+            self.view.addSubview(self.productImage)
+        }
+        
+        // Define the completion handler that will be invoked when the data is finished being retrieved from the web service / API
+        //
+        // This closure (closure is just a fancy name for "a block of code" will be invoked when the web service has responded
+        let getScannedProductDetails: (Data?, URLResponse?, Error?) -> Void = {
+            
+            (data, response, error) in
+            
+            // We expect the error to be nil
+            guard error == nil else {
+                
+                // If the error is not nil, print the error
+                print("Error calling GET with provided URL.")
+                print(error!)
+                return
+                
+            }
+            
+            // We expect data to have been received
+            guard let receivedData = data else {
+                
+                // If no data was received, report this
+                print("Error: did not receive any data.")
+                return
+            }
+            
+            
+            // Now attempt to parse the data as JSON
+            guard let json = try? JSON(data: receivedData) else {
+                
+                print("Error: Could not convert received data to JSON.")
+                return
+            }
+            // Attempt to extract the values we want from the parsed JSON
+            guard let image = json["image"].string,
+                let description = json["description"].string else {
+                    
+                    print("Error: Could not obtain desired data from the Digit Eyes JSON.")
+                    return
+            }
+            
+            // Create a structure based on the given data
+            let retrievedProduct = Product(imageAddress: image, description: description)
+            
+            print("\nFrom the view, the image URL is:")
+            print(retrievedProduct.imageAddress)
+            
+            // Try to obtain the description for the product
+            print("\nFrom the view, the image description is:")
+            print(retrievedProduct.description)
+            
+            // Set the product name
+            self.productName.text = retrievedProduct.description
+            
+            // Define a URL for the image
+            guard let productImageURL = URL(string: retrievedProduct.imageAddress) else {
+                
+                print("Could not create a URL from image address provided by DigitEyes.")
+                return
+            }
+            
+            // Now go get the actual image
+            let getProductImageTask = URLSession.shared.dataTask(with: productImageURL, completionHandler: getProductImage)
+            
+            // Now actually carry out the task
+            getProductImageTask.resume()
+            
+        }
+        
+        // Get the URL for the Digit-Eyes website, based on the provided UPC code
+        let upcLookupURL = getDataLookupURL(forUPC: self.upcField.text!)
+        
+        // Now actually set up a task that will invoke the completion handler when complete
+        let getProductDetailsTask = URLSession.shared.dataTask(with: upcLookupURL, completionHandler: getScannedProductDetails)
+        
+        // Temporarily set the results label
+        self.productName.text = "Working..."
+        
+        // Now actually carry out the task
+        getProductDetailsTask.resume()
+        
+        print("Button tapped")
+    }
+    
 }
-}
-}
+

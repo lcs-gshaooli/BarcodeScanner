@@ -20,9 +20,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="upcField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="2PC-mW-6mf"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG7-6E-1mh">
                                 <rect key="frame" x="31" y="253" width="354" height="83"/>
@@ -51,6 +48,7 @@
                     <connections>
                         <outlet property="productImage" destination="fUt-r1-rMO" id="VfY-LC-to3"/>
                         <outlet property="productName" destination="vG7-6E-1mh" id="cTs-Kh-W4m"/>
+                        <outlet property="upcField" destination="ntR-oF-9J2" id="RD4-gp-kE5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

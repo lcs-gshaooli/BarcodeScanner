@@ -13,6 +13,9 @@
 		2647204F248838B700E76799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2647204D248838B700E76799 /* Main.storyboard */; };
 		26472051248838BE00E76799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26472050248838BE00E76799 /* Assets.xcassets */; };
 		26472054248838BE00E76799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26472052248838BE00E76799 /* LaunchScreen.storyboard */; };
+		26DA90A524894C0600846C3E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA90A424894BF800846C3E /* SwiftyJSON.swift */; };
+		26DA90A724894C8400846C3E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA90A624894C8400846C3E /* Product.swift */; };
+		26DA90A924894E7400846C3E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA90A824894E7400846C3E /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		26472050248838BE00E76799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26472053248838BE00E76799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26472055248838BE00E76799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26DA90A424894BF800846C3E /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		26DA90A624894C8400846C3E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		26DA90A824894E7400846C3E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				26472050248838BE00E76799 /* Assets.xcassets */,
 				26472052248838BE00E76799 /* LaunchScreen.storyboard */,
 				26472055248838BE00E76799 /* Info.plist */,
+				26DA90A424894BF800846C3E /* SwiftyJSON.swift */,
+				26DA90A624894C8400846C3E /* Product.swift */,
+				26DA90A824894E7400846C3E /* Helper.swift */,
 			);
 			path = BarcodeScanner;
 			sourceTree = "<group>";
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DA90A724894C8400846C3E /* Product.swift in Sources */,
+				26DA90A924894E7400846C3E /* Helper.swift in Sources */,
 				2647204C248838B700E76799 /* ViewController.swift in Sources */,
 				26472048248838B700E76799 /* AppDelegate.swift in Sources */,
 				2647204A248838B700E76799 /* SceneDelegate.swift in Sources */,
+				26DA90A524894C0600846C3E /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
