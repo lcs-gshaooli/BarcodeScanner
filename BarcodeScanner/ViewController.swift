@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // Pre-load a UPC number to lookup
-        upcField.text = "055742517859"
+        upcField.text = "7501035911208"
         
     }
     
@@ -59,9 +59,13 @@ class ViewController: UIViewController {
             }
             
             
-            self.productImage = UIImageView(image: image)
-            // Add the image view to the parent view
-            self.view.addSubview(self.productImage)
+            DispatchQueue.main.async {
+                // Set the product image
+                self.productImage = UIImageView(image: image)
+                self.productImage.frame = CGRect(x: 20, y: 325, width: self.view.frame.width - 40, height: 400)
+                // Add the image view to the parent view
+                self.view.addSubview(self.productImage)
+            }
         }
         
         // Define the completion handler that will be invoked when the data is finished being retrieved from the web service / API
@@ -96,6 +100,8 @@ class ViewController: UIViewController {
                 print("Error: Could not convert received data to JSON.")
                 return
             }
+            
+            print(json.stringValue)
             // Attempt to extract the values we want from the parsed JSON
             guard let image = json["image"].string,
                 let description = json["description"].string else {

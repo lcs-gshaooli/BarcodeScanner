@@ -87,16 +87,18 @@ func getDataLookupURL(forUPC providedUPC: String) -> URL {
      */
     
     // Define the authorization key
-    let myAuthKey = "Be67Q9d5b5Bm4Cr7"
+    let myAuthKey = "Eh18C2k2c2Rr6Hf0"
     
     // Define the application key
-    let myAppKey = "/wADzn2k+r4k"
+    let myAppKey = "/woBmhD7kbKi"
     
     // Get the signature
     let signature: String = providedUPC.hmac(algorithm: .SHA1, key: myAuthKey)
     
     // Assemble the address
     let address = "https://www.digit-eyes.com/gtin/v2_0/?upcCode=\(providedUPC)&field_names=all&language=en&app_key=\(myAppKey)&signature=\(signature)"
+    
+    print(address)
     
     return URL(string: address)!
     
