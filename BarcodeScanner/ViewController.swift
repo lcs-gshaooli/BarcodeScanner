@@ -115,7 +115,10 @@ class ViewController: UIViewController {
             print(retrievedProduct.description)
             
             // Set the product name
-            self.productName.text = retrievedProduct.description
+            // self.productName.text = retrievedProduct.description
+            DispatchQueue.main.async { // Correct
+                self.productName.text = retrievedProduct.description
+            }
             
             // Define a URL for the image
             guard let productImageURL = URL(string: retrievedProduct.imageAddress) else {
