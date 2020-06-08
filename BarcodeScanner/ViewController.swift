@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var productName: UILabel!
     @IBOutlet var productImage: UIImageView!
     @IBOutlet var upcField: UITextField!
+    @IBOutlet var scanButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,7 @@ class ViewController: UIViewController {
             
             (data, response, error) in
             
+
             // We expect the error to be nil
             guard error == nil else {
                 
@@ -124,8 +126,9 @@ class ViewController: UIViewController {
             // self.productName.text = retrievedProduct.description
             DispatchQueue.main.async { // Correct
                 self.productName.text = retrievedProduct.description
+                
             }
-            
+                        
             // Define a URL for the image
             guard let productImageURL = URL(string: retrievedProduct.imageAddress) else {
                 
@@ -154,6 +157,8 @@ class ViewController: UIViewController {
         getProductDetailsTask.resume()
         
         print("Button tapped")
+        
+        
     }
     
 }
