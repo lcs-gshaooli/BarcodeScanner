@@ -71,30 +71,13 @@
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="117.85714285714285"/>
         </scene>
-        <!--Child View Controller-->
+        <!--Barcode View Controller-->
         <scene sceneID="5iQ-0T-rsg">
             <objects>
-                <viewController id="vqW-Kr-0AA" customClass="ChildViewController" sceneMemberID="viewController">
+                <viewController id="vqW-Kr-0AA" customClass="BarcodeViewController" customModule="BarcodeScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aFn-gK-2oN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" highlighted="YES" selected="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXb-Ei-Xyh">
-                                <rect key="frame" x="143" y="573" width="129" height="134"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Image">
-                                    <attributedString key="attributedTitle"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    </preferredSymbolConfiguration>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="barcode" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SaI-Z9-7KD">
-                                <rect key="frame" x="162" y="606.5" width="91" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="3J5-IP-Ik9"/>
                     </view>
@@ -124,7 +107,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="578" height="583"/>
         <image name="barcode" catalog="system" width="64" height="46"/>
     </resources>
 </document>
