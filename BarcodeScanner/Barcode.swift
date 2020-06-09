@@ -14,6 +14,8 @@ class BarcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
 
+    var finalbarcode = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

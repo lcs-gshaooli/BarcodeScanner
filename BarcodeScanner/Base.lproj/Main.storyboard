@@ -47,8 +47,8 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="49" scale="large"/>
                                 </state>
                                 <connections>
-                                    <action selector="productDetailsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZK8-ay-ms0"/>
-                                    <segue destination="vqW-Kr-0AA" kind="show" id="0qt-nj-fSi"/>
+                                    <action selector="scanButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfK-ik-jIu"/>
+                                    <segue destination="vqW-Kr-0AA" kind="show" identifier="scanbarcode" id="0qt-nj-fSi"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUt-r1-rMO">
@@ -63,7 +63,6 @@
                     <connections>
                         <outlet property="productImage" destination="fUt-r1-rMO" id="VfY-LC-to3"/>
                         <outlet property="productName" destination="vG7-6E-1mh" id="cTs-Kh-W4m"/>
-                        <outlet property="scanButton" destination="u82-sq-8gD" id="1ps-fv-PUH"/>
                         <outlet property="upcField" destination="ntR-oF-9J2" id="RD4-gp-kE5"/>
                     </connections>
                 </viewController>

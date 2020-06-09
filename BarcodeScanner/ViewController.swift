@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet var productName: UILabel!
     @IBOutlet var productImage: UIImageView!
     @IBOutlet var upcField: UITextField!
-    @IBOutlet var scanButton: UIButton!
+    
+    
+    var scanField = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,21 @@ class ViewController: UIViewController {
         upcField.text = "7501035911208"
         
     }
+    
+    
+    
+    @IBAction func scanButton(_ sender: Any) {
+        
+        performSegue(withIdentifier: scanField, sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc = segue.destination as! BarcodeViewController
+        vc.finalbarcode = self.scanField
+    }
+    
     
     @IBAction func productDetailsButton(_ sender: Any) {
         
@@ -76,7 +93,7 @@ class ViewController: UIViewController {
             
             (data, response, error) in
             
-
+            
             // We expect the error to be nil
             guard error == nil else {
                 
@@ -128,7 +145,7 @@ class ViewController: UIViewController {
                 self.productName.text = retrievedProduct.description
                 
             }
-                        
+            
             // Define a URL for the image
             guard let productImageURL = URL(string: retrievedProduct.imageAddress) else {
                 
